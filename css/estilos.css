@@ -1,0 +1,591 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Estilo de fondo de la pagina pa ver que tal*/
+/*
+.container {
+    width: 100%;
+    height: 100%;
+    --s: 84px;
+    --c1: #f2f2f2;
+    --c2: #cdcbcc;
+    --c3: #999999;
+  
+    --_g: 0 120deg, #0000 0;
+    background: conic-gradient(
+        from 0deg at calc(500% / 6) calc(100% / 3),
+        var(--c3) var(--_g)
+      ),
+      conic-gradient(
+        from -120deg at calc(100% / 6) calc(100% / 3),
+        var(--c2) var(--_g)
+      ),
+      conic-gradient(
+        from 120deg at calc(100% / 3) calc(500% / 6),
+        var(--c1) var(--_g)
+      ),
+      conic-gradient(
+        from 120deg at calc(200% / 3) calc(500% / 6),
+        var(--c1) var(--_g)
+      ),
+      conic-gradient(
+        from -180deg at calc(100% / 3) 50%,
+        var(--c2) 60deg,
+        var(--c1) var(--_g)
+      ),
+      conic-gradient(
+        from 60deg at calc(200% / 3) 50%,
+        var(--c1) 60deg,
+        var(--c3) var(--_g)
+      ),
+      conic-gradient(
+        from -60deg at 50% calc(100% / 3),
+        var(--c1) 120deg,
+        var(--c2) 0 240deg,
+        var(--c3) 0
+      );
+    background-size: calc(var(--s) * 1.732) var(--s);
+  }*/
+  
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.title-blanco{
+    color: white;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+
+.contenedor-horizontal {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #fefefe; /* Color de fondo opcional */
+    padding: 10px; /* Espaciado interno opcional */
+    border: 1px solid #ffffff; /* Borde opcional */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+/* Barra de Navegación, idea by UI */ 
+.ul {
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    list-style: none;
+  }
+  .li {
+    margin-bottom: 0px;
+  }
+  .button {
+    background-color: transparent;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 10px 30px;
+    cursor: pointer;
+    position: relative;
+    padding-left: 11px;
+    text-align: center;
+    transition: 0.1s;
+    z-index: 1;
+  }
+  
+  .p {
+    z-index: 2;
+    position: relative;
+  }
+  
+  .button:hover {
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+  .button:hover::before {
+    transform: rotate(0deg);
+    width: 100%;
+    height: 40px;
+    top: 2px;
+    border-radius: 3px;
+    background-color: rgb(47, 118, 231);
+  }
+  .button::before {
+    content: "";
+    border-radius: 1px;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: rgb(252, 252, 252);
+    left: -10px;
+    top: 19px;
+    cursor: pointer;
+    transform: rotate(225deg);
+    transition: 0.3s;
+    z-index: -1;
+  }
+  
+  .button:active::before {
+    background-color: rgb(255, 255, 255);
+  }
+  
+.nav__link--top-right {
+    position: absolute;
+    top: 10px; /* Ajusta según el espacio que desees desde la parte superior */
+    right: 10px; /* Ajusta según el espacio que desees desde la derecha */
+    display: flex;
+    gap: 15px; /* Espaciado entre los elementos de la lista */
+    list-style: none; /* Elimina los puntos de la lista */
+    margin: 0;
+    padding: 0;
+}
+
+.nav__logo {
+    position: absolute; /* Fija el logo en la parte superior izquierda */
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    left: 20px; /* Ajusta la distancia desde la izquierda */
+    z-index: 2; /* Asegura que esté por encima del fondo */
+}
+
+.hero {
+    position: relative;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    background: url('../Imagenes/fondo.jpg') no-repeat center center/cover; /* Ruta relativa corregida */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Recorte con forma personalizada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero__container {
+    position: relative; /* Asegura que el contenido esté encima de la imagen */
+    z-index: 1; /* Coloca el contenido por encima del fondo */
+    color: #fff; /* Texto blanco para mejor contraste */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 80vh; /* Ajusta la altura para que no quede tan abajo */
+    margin: 0 auto;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Capa oscura para mejorar la legibilidad del texto */
+    z-index: 0; /* Coloca la capa debajo del contenido */
+}
+
+.hero__title {
+    font-size: 3rem; /* Tamaño más grande para destacar */
+    font-weight: 700;
+    color: #fff; /* Cambiado a blanco para contraste */
+    margin-bottom: 1rem;
+}
+
+.hero__description {
+    font-size: 1.25rem;
+    color: #fff; /* Cambiado a blanco para contraste */
+    margin-bottom: 2rem;
+}
+/* Estilo para los botones */
+.boton {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Elimina el subrayado */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.servicios {
+    padding: 60px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.contenedor-servicios {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Aumenta el espacio entre los contenedores */
+    flex-wrap: wrap; /* Permite que los contenedores se ajusten en varias filas */
+    margin-top: 40px; /* Espaciado superior */
+    padding: 20px; /* Espaciado interno del contenedor general */
+}
+
+.servicio {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center; /* Centra el contenido dentro del contenedor */
+    margin: 10px; /* Espaciado adicional entre los contenedores */
+}
+
+.servicio h3 {
+    margin-bottom: 15px; /* Espaciado entre el título y el contenido */
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.servicio p {
+    margin-bottom: 20px; /* Espaciado entre el párrafo y el botón */
+    font-size: 1rem;
+    color: #555;
+}
+
+.servicio button {
+    margin-top: 10px; /* Espaciado superior para el botón */
+}
+
+/* From Uiverse.io by BHARGAVPATEL1244 */ 
+button {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 0.9rem 2rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 500px;
+    overflow: hidden;
+    background: #f8f8f8;
+    color: ghostwhite;
+   }
+   
+   button span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+   }
+
+   button:hover span {
+    color: black;
+   }
+   
+   button::before,
+   button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+   }
+   
+   button::before {
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+   }
+   
+   button:hover::before {
+    transform: translate3d(100%, 0, 0);
+   }
+
+/* Botón para "Capacitación en análisis de datos" */
+.boton-analisis {
+    background: #faf35e; /* Amarillo */
+}
+
+.boton-analisis:hover::before {
+    background: #007ecc; /* Azul al pasar el mouse */
+}
+
+/* Botón para "Herramientas de Inteligencia de Negocios (BI)" */
+.boton-bi {
+    background: #ff8000; /* Naranja */
+}
+
+.boton-bi:hover::before {
+    background: #fbed2e; /* Amarillo al pasar el mouse */
+}
+
+/* Botón para "Excel para negocios" */
+.boton-excel {
+    background: #66ff66; /* Verde */
+}
+
+.boton-excel:hover::before {
+    background: #009900; /* Verde oscuro al pasar el mouse */
+}
+
+
+/* From Uiverse.io by zanina-yassine */ 
+.popup {
+    display: none; /* Oculta el formulario inicialmente */
+    position: fixed; /* Fija el formulario en la pantalla */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el centro */
+    width: 320px;
+    height: fit-content;
+    background: #FFFFFF;
+    box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 13px;
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    padding: 20px;
+}
+
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #ECF1FD;
+    box-shadow: 0px 0.5px 0.5px #EFEFEF, 0px 1px 0.5px rgba(239, 239, 239, 0.5);
+    border-radius: 5px;
+  }
+
+  .form-icon {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: auto; /* Mantendrá la proporción de la imagen */
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor sin recortarla */
+    border-radius: 5px; /* Bordes redondeados mamalones */
+    }
+
+  
+  .note {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 24px;
+    color: #2B2B2F;
+  }
+  
+  .subtitle {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    color: #5F5D6B;
+  }
+  
+  .input_field {
+    width: 100%;
+    height: 42px;
+    padding: 0 0 0 12px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #e5e5e5;
+    filter: drop-shadow(0px 1px 0px #efefef)
+      drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+  }
+
+  .input_field:focus {
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 0px 1px #141414;
+    background-color: transparent;
+  }
+  
+  .form button.submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 18px;
+    gap: 10px;
+    width: 100%;
+    height: 42px;
+    background: linear-gradient(180deg, #4480FF 0%, #115DFC 50%, #0550ED 100%);
+    box-shadow: 0px 0.5px 0.5px #EFEFEF, 0px 1px 0.5px rgba(239, 239, 239, 0.5);
+    border-radius: 5px;
+    border: 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #ffffff;
+  }
+  .cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none; /* Sin fondo */
+    border: none; /* Sin bordes */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-size: 18px; /* Tamaño del texto */
+    font-weight: bold; /* Hace la "X" en negritas */
+    color: #333; /* Cambia el color de la "X" */
+    transition: color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.cerrar:hover {
+    color: #ff0000; /* Cambia el color al pasar el mouse (opcional) */
+}
+
+.contacto {
+    position: relative; /* Hace que los elementos con posición absoluta se ubiquen dentro de esta sección */
+    padding: 80px 20px; /* Espaciado interno */
+    text-align: left; /* Alinea el texto a la izquierda */
+    background-color: #f9f9f9; /* Fondo claro */
+    width: 100%; /* Ocupa todo el ancho de la página */
+    margin: 0; /* Elimina márgenes automáticos */
+    border-radius: 0; /* Elimina bordes redondeados si no los necesitas */
+    box-shadow: none; /* Opcional: Elimina la sombra si no es necesaria */
+}
+
+.contenedor-contacto {
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+    padding: 0 20px; /* Espaciado interno para que no quede pegado a los bordes */
+}
+
+.acerca h2, .Contacto h2 {
+    font-size: 2.5rem; /*Aqui se aumenta el tamaño del "Contactanos"*/
+    font-weight: 700; /*Hace el texto mas grueso*/
+    color: #333;
+    margin-bottom: 30px; /* Espaciado inferior */
+}
+
+.acerca p, .Contacto p {
+    font-size: 1rem; 
+    color: #555;
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.contacto ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding por defecto */
+    margin: 20px 0; /* Agrega espacio superior e inferior */
+    display: flex;
+    flex-direction: column; /* Cambia a columna para apilar los elementos */
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 15px; /* Espaciado entre los elementos de la lista */
+}
+
+.contacto li {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    gap: 10px; /* Espaciado entre el icono y el texto */
+    font-size: 1.2rem; /* Aumentamos tamaño de la fuente pa q se vea mamalon */
+    color: #333; /* Color del texto */
+}
+
+.rectangulo {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 2px solid #cac3f1; /* Borde algo raro pero le movi pa q se vea god */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    max-width: 800px; /* Ancho máximo */
+    margin: 0 auto; /* Centra el rectángulo horizontalmente */
+    text-align: center; /* Centra el texto dentro del rectángulo */
+}
+
+.imagen.acerca {
+    text-align: center; /* Centra el contenido dentro del contenedor */
+    padding: 10px; /* Agrega un poco de espacio interno */
+}
+
+.acerca-de__image {
+    max-width: 100%; /* La imagen no será más ancha que su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina espacios extra alrededor de la imagen */
+    margin: 20px auto; /* Centra la imagen horizontalmente y agrega un margen superior e inferior */
+    border-radius: 10px; /* Opcional: Bordes redondeados para un diseño más estético */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: Sombra para darle profundidad */
+}
+
+.acerca {
+    background-color: #ffffff; /* Fondo blanco limpio */
+    padding: 40px 20px; /* Espaciado interno para respirar */
+}
+
+
+
+/*Boton para el final de la pagina*/
+
+.button-back-to-top {
+    position: absolute;
+    right: 20px; /* Ajusta la distancia desde el borde derecho */
+    bottom: 20px; /* Ajusta la distancia desde el borde inferior */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    border-radius: 50%; /* Botón redondo */
+    background-color: rgb(20, 20, 20); /* Color de fondo */
+    border: none; /* Sin bordes */
+    font-weight: 600; /* Grosor de las palabras (si las hubiera) */
+    display: flex; /* Centra el contenido del botón */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    box-shadow: 0px 0px 0px 4px rgba(4, 56, 224, 0.253); /* Sombra */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition-duration: 0.3s; /* Transición suave */
+    overflow: hidden; /* Oculta contenido que sobresalga */
+  }
+  
+  .button-back-to-top .svgIcon {
+    width: 12px; /*Tamaño del icono*/
+    transition-duration: 0.3s; /*Transicion suave*/
+  }
+  
+  .button-back-to-top .svgIcon path {
+    fill: white; /*Color del icono*/
+  }
+  
+  .button-back-to-top:hover {
+    width: 140px; /* El botón se expande horizontalmente */
+    border-radius: 50px; /* Cambia la forma del botón a un óvalo */
+    transition-duration: 0.3s; /* Transición suave para el cambio de tamaño y forma */
+    background-color: rgb(55, 100, 247); /* Cambia el color de fondo a un morado claro */
+    align-items: center; /* Mantiene el contenido centrado verticalmente */
+  }
+  
+  .button-back-to-top:hover .svgIcon {
+    transition-duration: 0.3s;
+    transform: none; /* Mueve el icono hacia arriba al pasar el mouse */
+  }
+  
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en los enlaces */
+}

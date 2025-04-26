@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso</title>
+    <link rel="shortcut icon" href="./Imagenes/ChatGPT Image 5 abr 2025, 07_49_11 p.m..png" type="image/png">
+    <link rel="stylesheet" href="./CSS/normalize.css">
+    <link rel="stylesheet" href="./CSS/estilos.css">
+</head>
+<body>
+    <header id="inicio" class="hero">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <h2 class="nav__title title-blanco">DATA ACADEMY</h2>
+            </div>
+            <ul class="nav__link nav__link--top-right">
+                <li class="nav__items">
+                    <!--<a href="#inicio" class="nav__links">Inicio</a>-->
+                    <button class="button button-inicio"><p class="p">Inicio</p></button>
+                </li>
+                <li class="nav__items">
+                    <!--<a href="#acerca" class="nav__links">Acerca de</a>-->
+                    <button class="button button-acerca"><p class="p">Acerca de </p></button>
+                </li>
+                <li class="nav__items">
+                    <!--<a href="#contacto" class="nav__links">Contacto</a>-->
+                    <button class="button button-contacto"><p class="p">Contacto</p></button>
+                </li>
+            </ul>
+        </nav>
+        <div class="hero__container container">
+            <h1 class="hero__title">Bienvenido a DATA ACADEMY</h1>
+            <p class="hero__description">Conviértete en un experto con nuestros cursos completos.</p>
+            <a href="#servicios" class="boton">Comenzar ahora</a>
+        </div>
+    </header>
+<!-- Sección de Acerca de -->
+<section id="acerca" class="acerca">
+    <div class="rectangulo">
+        <h2 class="acerca-de__title">¿Quiénes somos?</h2>
+        <p class="acerca-de__description">
+            En DATA ACADEMY, ofrecemos cursos de capacitación en análisis de datos y herramientas de inteligencia de negocios. Nuestro objetivo es ayudarte a adquirir las habilidades necesarias para destacar en el mundo laboral.<br><br>
+            Nos apasiona la educación y creemos que el  conocimiento de los datos puede cambiar tu carrera. 
+            Por eso, te guiamos desde cero hasta convertirte en un profesional competitivo y seguro.    
+        </p>
+        <div class="acerca-de__image">
+            <img src="Imagenes/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="Equipo de DATA ACADEMY" class="acerca-de__image">
+        </div>
+    </div>
+</section>
+
+<!-- Sección de servicios -->
+<section id="servicios" class="servicios">
+    <h2>Nuestros Servicios 💻</h2>
+    <div class="contenedor-servicios">
+        <div class="servicio">
+            <h3>Capacitación en análisis de datos</h3>
+            <p>Aprende a analizar datos con Python y R para tomar mejores decisiones.</p>
+            <button class="boton-analisis"><span>Ver más</span></button>
+        </div>
+        <div class="servicio">
+            <h3>Herramientas de Inteligencia de Negocios (BI)</h3>
+            <p>Domina Power BI y otras herramientas clave para visualizar datos y optimizar procesos.</p>
+            <button class="boton-bi"><span>Ver más</span></button>
+
+        </div>
+        <div class="servicio">
+            <h3>Excel para negocios</h3>
+            <p>Capacítate en Excel con enfoque empresarial para potenciar tus habilidades en hojas de cálculo.</p>
+            <button class="boton-excel"><span>Ver más</span></button>
+        </div>
+
+     <!--Parte de formulario -->
+
+<div id="formulario" class="popup">
+    <button class="cerrar">X</button> <!-- Botón para cerrar -->
+    <form class="form">
+        <div class="icon">
+            <img src="./Imagenes/ChatGPT Image 5 abr 2025, 07_49_11 p.m..png" alt="Icono" class="form-icon">
+        </div>
+        <div class="note">
+            <label class="title">¡Inscribete Ahora!</label>
+            <span class="subtitle">Ingresa tu correo electronico para entrar a nuestro curso.</span>
+        </div>
+        <input placeholder="Enter your e-mail" title="Enter your e-mail" name="email" type="email" class="input_field">
+        <button class="submit">Inscribirse</button>
+    </form>
+</div>
+
+    </div>
+</section>
+<!--Seccion de contacto-->
+<section id="contacto" class="contacto">
+    <div class="contenedor-contacto">
+        <h2>Contáctanos</h2>
+        <p>¿Tienes preguntas? ¡Estamos aquí para ayudarte!</p>
+        <ul>
+            <li>🌐 Correo: DatAcademy@gmail.com</li>
+            <li>☎️ Teléfono: 8124583928</li>
+        </ul>
+        <button class="button-back-to-top">
+            <svg class="svgIcon" viewBox="0 0 384 512">
+                <path
+                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                ></path>
+            </svg>
+        </button>
+    </div>
+</section>
+
+<script src="./js/script.js" defer></script>
+
+</body>
+</html>
