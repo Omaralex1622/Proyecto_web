@@ -1,22 +1,52 @@
-// Selecciona todos los botones "Ver más"
-const botonesVerMas = document.querySelectorAll('.boton-analisis, .boton-bi, .boton-excel');
+// Selecciona los botones "Ver más" y las ventanas emergentes
+const botonesVerMas = {
+    python: document.querySelector('.boton-analisis'),
+    bi: document.querySelector('.boton-bi'),
+    excel: document.querySelector('.boton-excel')
+};
 
-// Selecciona el formulario
-const formulario = document.querySelector('#formulario');
+const ventanas = {
+    python: document.getElementById('ventana-python'),
+    bi: document.getElementById('ventana-bi'),
+    excel: document.getElementById('ventana-excel')
+};
 
-// Agrega un evento de clic a cada botón
-botonesVerMas.forEach(boton => {
-    boton.addEventListener('click', (e) => {
-        e.preventDefault(); // Evita el comportamiento predeterminado del enlace
-        formulario.style.display = 'block'; // Muestra el formulario
-        formulario.scrollIntoView({ behavior: 'smooth' }); // Desplazamiento suave hacia el formulario
+const overlay = document.querySelector('.overlay');
+
+// Función para mostrar la ventana correspondiente
+Object.keys(botonesVerMas).forEach(servicio => {
+    botonesVerMas[servicio].addEventListener('click', () => {
+        ventanas[servicio].classList.add('mostrar'); // Muestra la ventana
+        overlay.classList.add('mostrar'); // Muestra el fondo oscuro
     });
 });
 
-// Botón para cerrar el formulario
-const botonCerrar = document.querySelector('.cerrar');
-botonCerrar.addEventListener('click', () => {
-    formulario.style.display = 'none'; // Oculta el formulario
+// // Cambia el color del h2 dinámicamente
+// const coloresH2 = {
+//     python: '#0056b3', // Azul
+//     bi: '#ff8000', // Naranja
+//     excel: '#66cc66' // Verde
+// };
+
+// Object.keys(ventanas).forEach(servicio => {
+//     const ventana = ventanas[servicio];
+//     const h2 = ventana.querySelector('.texto-ventana h2');
+//     h2.style.color = coloresH2[servicio];
+// });
+
+// // Función para cerrar las ventanas
+const botonesCerrar = document.querySelectorAll('.cerrar');
+ botonesCerrar.forEach(boton => {
+     boton.addEventListener('click', () => {
+         Object.values(ventanas).forEach(ventana => ventana.classList.remove('mostrar')); // Oculta todas las ventanas
+         overlay.classList.remove('mostrar'); // Oculta el fondo oscuro
+     });
+ });
+
+// Cierra la ventana al hacer clic en el fondo oscuro
+overlay.addEventListener('click', () => {
+    Object.values(ventanas).forEach(ventana => ventana.classList.remove('mostrar'));
+    overlay.classList.remove('mostrar');
 });
 
 // Selecciona los botones
